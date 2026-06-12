@@ -218,16 +218,24 @@ def postprocess_tracking_ids(annots):
     by remapping tracking ids to unused integer values.
     """
 
+    reserved_ids = {
+        annot["tracking_id"]
+        for annot in annots
+        if annot["tracking_id"] >= 0
+    }
     # Defines which video paths use which tracking id. tracking id -> video path
     used_keys = {}
     # Defines mappings to follow. (video path, tracking id) -> new tracking id
     mappings = {}
     # The smallest unused tracking id
-    next_unused_id = 1
+    next_unused_id = max(reserved_ids, default=0) + 1
 
     for index, annot in enumerate(annots):
         tid = annot["tracking_id"]
         path = annot["video_path"]
+
+        if tid < 0:
+            continue
 
         # Check if the key is used by a different image
         if tid in used_keys.keys() and used_keys[tid] != path:
@@ -237,14 +245,17 @@ def postprocess_tracking_ids(annots):
                 tid = mappings[mapping_key]
             # If it doesn't create the mapping
             else:
+                while next_unused_id in reserved_ids or next_unused_id in used_keys:
+                    next_unused_id += 1
                 mappings[mapping_key] = next_unused_id
                 tid = next_unused_id
+                reserved_ids.add(tid)
 
         # Mark the new key if needed
         if tid not in used_keys.keys():
             used_keys[tid] = path
             # Find the next unused id not in used_keys
-            while next_unused_id in used_keys.keys():
+            while next_unused_id in reserved_ids or next_unused_id in used_keys:
                 next_unused_id += 1
 
         # Assign the tid
