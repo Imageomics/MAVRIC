@@ -21,12 +21,6 @@ ANNOTATION_COLNAMES = [
     "category_id",
     "LCA_clustering_id",
     "gt_iou",
-    "source_experiment",
-    "original_tracking_id",
-    "source_tracking_key",
-    "source_ground_truth_id",
-    "source_identity_key",
-    "source_candidate_tracking_ids",
 ]
 
 # COLUMNS TO BE KEPT IN CATEGORIES (as found in annotations)
@@ -247,3 +241,5 @@ def join_dataframe_dict(annots):
     }
 
     return final_json
+
+
