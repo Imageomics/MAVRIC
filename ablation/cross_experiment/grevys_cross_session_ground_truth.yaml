@@ -1,0 +1,92 @@
+metadata:
+  species_group: grevys
+  species: "Grevy's zebra"
+  tracking_id_namespace: bundle_tracking_id
+  source_bundle: /fs/ess/PAS2136/ggr_data/results/IJCV_MAVRIC_Ground_Truth/Cross_experiment_identification_IA35_GT_representatives/grevys/combined_gt_representatives_fs_annots.json
+  identity_map: /fs/ess/PAS2136/ggr_data/results/IJCV_MAVRIC_Ground_Truth/Cross_experiment_identification_IA35_GT_representatives/grevys/identity_map.tsv
+  lca_output: /fs/ess/PAS2136/ggr_data/results/IJCV_MAVRIC_Ground_Truth/Cross_experiment_identification_IA35_GT_representatives/grevys/lca_stability_universal/beta_stability_annots.json
+  manual_review_status: complete
+  manual_review_conclusion: All bundle TIDs are singleton clusters within each viewpoint.
+  counts:
+    bundle_identities: 24
+    left_representatives: 21
+    right_representatives: 20
+    left_ground_truth_clusters: 21
+    right_ground_truth_clusters: 20
+
+# Each bundle TID represents one ground-truth identity from one source session.
+# A TID present in both lists is the known left-right link for that identity.
+# Singleton lists mean no same-view identities were merged across sessions.
+individuals:
+  - id: 1
+    left: [1]
+    right: [1]
+  - id: 2
+    left: [2]
+    right: [2]
+  - id: 3
+    left: [3]
+    right: [3]
+  - id: 4
+    left: [4]
+    right: []
+  - id: 5
+    left: [5]
+    right: []
+  - id: 6
+    left: []
+    right: [6]
+  - id: 7
+    left: [7]
+    right: [7]
+  - id: 8
+    left: [8]
+    right: [8]
+  - id: 9
+    left: [9]
+    right: []
+  - id: 10
+    left: [10]
+    right: []
+  - id: 11
+    left: []
+    right: [11]
+  - id: 12
+    left: []
+    right: [12]
+  - id: 13
+    left: [13]
+    right: [13]
+  - id: 14
+    left: [14]
+    right: [14]
+  - id: 15
+    left: [15]
+    right: [15]
+  - id: 16
+    left: [16]
+    right: [16]
+  - id: 17
+    left: [17]
+    right: [17]
+  - id: 18
+    left: [18]
+    right: [18]
+  - id: 19
+    left: [19]
+    right: [19]
+  - id: 20
+    left: [20]
+    right: [20]
+  - id: 21
+    left: [21]
+    right: [21]
+  - id: 22
+    left: [22]
+    right: [22]
+  - id: 23
+    left: [23]
+    right: [23]
+  - id: 24
+    left: [24]
+    right: [24]

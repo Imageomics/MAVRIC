@@ -417,7 +417,7 @@ def resolve_cross_view_conflicts_interactive(conflicts, grouped_all, data_map, i
             s1, e1 = get_cluster_time_interval(grouped_all[t1])
             s2, e2 = get_cluster_time_interval(grouped_all[t2])
             ctx = "SIMULTANEOUS" if intervals_overlap(s1, e1, s2, e2) else "SEQUENTIAL"
-            view = t1.split('_')[-1]
+            view = t1.rsplit('_', 1)[1]
             decision = pairwise_verification_interactive(
                 grouped_all, t1, t2, data_map[view], image_dir, interactive_mode, db_path, context_message=f"Clusters appear {ctx}")
 
@@ -446,7 +446,7 @@ def split_conflicting_cluster(parent_key, targets, grouped_all, all_lca_ids_view
     """Split parent cluster so each numeric‑TID family gets its own cluster."""
     print(f"    Splitting {parent_key} (links to {len(targets)} clusters)")
     parent_anns = list(grouped_all[parent_key])
-    base_id, view = parent_key.split('_')[0], parent_key.split('_')[1]
+    base_id, view = parent_key.rsplit('_', 1)
     moved_uuids = set()
     new_parts = defaultdict(list)
     sibling_keys = []
@@ -662,16 +662,23 @@ def main():
         print('  No merges accepted. Proceeding with splits …')
         made_change = False
         sibling_groups = []
-        lca_ids_left = {k.split('_')[0] for k in grouped_all if k.endswith('_left')}
-        lca_ids_right = {k.split('_')[0] for k in grouped_all if k.endswith('_right')}
+        lca_ids_left = {k.rsplit('_', 1)[0] for k in grouped_all if k.endswith('_left')}
+        lca_ids_right = {k.rsplit('_', 1)[0] for k in grouped_all if k.endswith('_right')}
 
         conflicts = find_conflicts(check_numeric_equivalence(grouped_all))
-        for conf_key, targets in conflicts.items():
+        for conf_key in conflicts:
+            # Earlier splits mutate the graph, so refresh this node's current
+            # conflict targets before applying another split.
+            current_targets = find_conflicts(
+                check_numeric_equivalence(grouped_all)
+            ).get(conf_key)
+            if not current_targets:
+                continue
             siblings = split_conflicting_cluster(
-                conf_key, targets, grouped_all,
+                conf_key, current_targets, grouped_all,
                 lca_ids_left if conf_key.endswith('_left') else lca_ids_right)
             if siblings:
-                sibling_groups.append({'keys': siblings, 'view': conf_key.split('_')[1]})
+                sibling_groups.append({'keys': siblings, 'view': conf_key.rsplit('_', 1)[1]})
                 made_change = True
 
         # Optional remnant verification

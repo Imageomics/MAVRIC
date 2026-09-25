@@ -1,0 +1,60 @@
+results_root: /fs/ess/PAS2136/ggr_data/results/IJCV_MAVRIC_Ground_Truth
+output_root: /fs/ess/PAS2136/ggr_data/results/IJCV_MAVRIC_Ground_Truth/Cross_experiment_identification_IA75_many
+
+ia_threshold: 0.75
+threshold_label: "75"
+selection_mode: many
+selection_policy: many_t05_q90_n10
+source_dir_template: "{experiment}_IA_{threshold_label}"
+source_fs_json: frame_sampling/fs_annots.json
+source_embedding_pickle: miew_id/miewid_embeddings.pickle
+annotation_filename: combined_many_fs_annots.json
+embedding_filename: combined_many_miewid_embeddings.pickle
+
+groups:
+  - name: grevys
+    display_name: "Grevy's zebra"
+    expected_species:
+      - "grevy's zebra"
+    tracking_id_registry: /fs/ess/PAS2136/ggr_data/results/IJCV_MAVRIC_Ground_Truth/Cross_experiment_identification_IA35/grevys/tracking_id_map.tsv
+    ground_truth_projection:
+      within_session_ground_truth: ablation/ra_selection/grevys_ground_truth.yaml
+      cross_session_ground_truth: ablation/cross_experiment/grevys_cross_session_ground_truth.yaml
+      source_identity_map: /fs/ess/PAS2136/ggr_data/results/IJCV_MAVRIC_Ground_Truth/Cross_experiment_identification_IA35_GT_representatives/grevys/identity_map.tsv
+    experiments:
+      - Grevys_Experiment_1
+      - Grevys_Experiment_2
+      - Grevys_Experiment_3
+      - Grevys_Experiment_4
+      - Grevys_Experiment_5
+      - Grevys_Experiment_6
+
+  - name: plains
+    display_name: Plains zebra
+    expected_species:
+      - plains zebra
+    tracking_id_registry: /fs/ess/PAS2136/ggr_data/results/IJCV_MAVRIC_Ground_Truth/Cross_experiment_identification_IA35/plains/tracking_id_map.tsv
+    ground_truth_projection:
+      within_session_ground_truth: ablation/ra_selection/plains_ground_truth.yaml
+      cross_session_ground_truth: ablation/cross_experiment/plains_cross_session_ground_truth.yaml
+      source_identity_map: /fs/ess/PAS2136/ggr_data/results/IJCV_MAVRIC_Ground_Truth/Cross_experiment_identification_IA35_GT_representatives/plains/identity_map.tsv
+    experiments:
+      - Plains_Experiment_7
+      - Plains_Experiment_8
+      - Plains_Experiment_9
+      - Plains_Experiment_10
+      - Plains_Experiment_11
+
+  - name: giraffes
+    display_name: Reticulated giraffe
+    expected_species:
+      - reticulated giraffe
+      - masai giraffe
+    tracking_id_registry: /fs/ess/PAS2136/ggr_data/results/IJCV_MAVRIC_Ground_Truth/Cross_experiment_identification_IA35/giraffes/tracking_id_map.tsv
+    ground_truth_projection:
+      within_session_ground_truth: ablation/ra_selection/giraffe_ground_truth.yaml
+      cross_session_ground_truth: ablation/cross_experiment/giraffes_cross_session_ground_truth.yaml
+      source_identity_map: /fs/ess/PAS2136/ggr_data/results/IJCV_MAVRIC_Ground_Truth/Cross_experiment_identification_IA35_GT_representatives/giraffes/identity_map.tsv
+    experiments:
+      - Giraffe_Experiment_12
+      - Giraffe_Experiment_13

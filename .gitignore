@@ -25,3 +25,17 @@ video_data.json
 *.nsys-rep
 *.out
 *.err
+
+# The pipeline implementation is source code, not a generated output folder.
+!VAREID/algo/frame_sampling/
+!VAREID/algo/frame_sampling/**
+VAREID/algo/frame_sampling/__pycache__/
+
+# Generated RA-selection configs and manifests are reproducible local artifacts.
+ablation/ra_selection/generated/
+
+# Generated IA-threshold configs and manifests are reproducible local artifacts.
+ablation/ia_threshold/generated/
+
+# Generated local cross-experiment manifests are reproducible artifacts.
+ablation/cross_experiment/generated/

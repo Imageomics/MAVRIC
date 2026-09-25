@@ -1,0 +1,14 @@
+experiment,event_id,event_date,target_species,used_videos,session_videos,documented_target_individuals,left_gt_identities,right_gt_identities,cross_view_linked_identities,current_gt_identities,cross_view_minimum_identities,current_minus_documented,assessment
+Grevys_Experiment_1,KABR-2023:19_01_2023_session_1,2023-01-19,Grevy's zebra,2,7,3,3,3,3,3,3,0,exact_match
+Grevys_Experiment_2,KABR-2023:19_01_2023_session_3,2023-01-19,Grevy's zebra,2,7,3,2,1,0,3,2,0,exact_count_with_viewpoint_only_identities
+Grevys_Experiment_3,KABR-2023:19_01_2023_session_4,2023-01-19,Grevy's zebra,3,7,4,4,4,2,6,4,2,two_missing_cross_view_links_can_reconcile
+Grevys_Experiment_4,KABR-2023:19_01_2023_session_6,2023-01-19,Grevy's zebra,3,7,3,3,3,3,3,3,0,exact_match
+Grevys_Experiment_5,KABR-2023:20_01_2023_session_3,2023-01-20,Grevy's zebra,2,6,5,5,5,5,5,5,0,exact_match
+Grevys_Experiment_6,KABR-2023:20_01_2023_session_4,2023-01-20,Grevy's zebra,3,7,4,4,4,4,4,4,0,exact_match
+Plains_Experiment_7,KABR-2023:14_01_2023_session_3,2023-01-14,Plains zebra,3,12,17,4,4,3,5,4,-12,experiment_is_small_session_subset
+Plains_Experiment_8,KABR-2023:17_01_2023_session_1,2023-01-17,Plains zebra,2,3,5,5,2,1,6,5,1,one_missing_cross_view_link_can_reconcile
+Plains_Experiment_9,KABR-2023:17_01_2023_session_2,2023-01-17,Plains zebra,2,6,5,5,2,1,6,5,1,one_missing_cross_view_link_can_reconcile
+Plains_Experiment_10,KABR-2023:17_01_2023_session_4,2023-01-17,Plains zebra,3,13,4,4,4,4,4,4,0,exact_match
+Plains_Experiment_11,KABR-2023:18_01_2023_session_6,2023-01-18,Plains zebra,4,7,10,7,8,3,12,8,2,two_missing_cross_view_links_can_reconcile
+Giraffe_Experiment_12,KABR-2023:14_01_2023_session_2,2023-01-14,Reticulated giraffe,3,5,2,5,6,3,8,6,6,cannot_reconcile_by_cross_view_links
+Giraffe_Experiment_13,KABR-2023:20_01_2023_session_1,2023-01-20,Reticulated giraffe,3,6,4,5,6,3,8,6,4,cannot_reconcile_by_cross_view_links_mixed_session

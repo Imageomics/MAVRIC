@@ -11,8 +11,8 @@ confidence_threshold: 0.1
 save_threshold: 0.75
 
 # Video processing
-video_fps: 15              # UPDATED: 8 -> 15 fps for better tracking
-video_max_frames: 5000
+video_fps: 15              # Extract every other frame from ~30 fps drone videos
+video_max_frames: 10000    # High enough to avoid truncating ~5800-frame videos
 img_size_vid: 3008         # Keep high resolution for aerial footage
 
 # Image processing (for non-video detections)

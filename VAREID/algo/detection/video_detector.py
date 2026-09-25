@@ -186,6 +186,10 @@ def detect_videos(video_data, model_path, threshold, save_threshold, sz, tracker
                     continue
 
                 for box in result.boxes:
+                    # A box without a tracker ID cannot support video-based identity linking.
+                    if box.id is None:
+                        continue
+
                     # Only SAVE detections above save_threshold
                     if box.conf is None or box.conf.item() < save_threshold:
                         continue
@@ -202,7 +206,7 @@ def detect_videos(video_data, model_path, threshold, save_threshold, sz, tracker
                         "bbox": [x1, y1, x2 - x1, y2 - y1],
                         "confidence": box.conf.item(),
                         "detection_class": int(box.cls.item()) if box.cls is not None else -1,
-                        "tracking_id": int(box.id.item()) if box.id is not None else -1,
+                        "tracking_id": int(box.id.item()),
                         "timestamp": frame_data["time_posix"],
                     })
 

@@ -1,0 +1,29 @@
+frame_interval: 15
+
+datasets:
+  - name: Grevys_Experiment_1
+    input_json: /fs/ess/PAS2136/ggr_data/results/IJCV_MAVRIC_Ground_Truth/Grevys_Experiment_1_test_mavric_imageomics/ia_classifier/ia_annots_filtered_35.json
+  - name: Grevys_Experiment_2
+    input_json: /fs/ess/PAS2136/ggr_data/results/IJCV_MAVRIC_Ground_Truth/Grevys_Experiment_2_test_mavric_imageomics/ia_classifier/ia_annots_filtered_35.json
+  - name: Grevys_Experiment_3
+    input_json: /fs/ess/PAS2136/ggr_data/results/IJCV_MAVRIC_Ground_Truth/Grevys_Experiment_3_test_mavric_imageomics/ia_classifier/ia_annots_filtered_35.json
+  - name: Grevys_Experiment_4
+    input_json: /fs/ess/PAS2136/ggr_data/results/IJCV_MAVRIC_Ground_Truth/Grevys_Experiment_4_test_mavric_imageomics/ia_classifier/ia_annots_filtered_35.json
+  - name: Grevys_Experiment_5
+    input_json: /fs/ess/PAS2136/ggr_data/results/IJCV_MAVRIC_Ground_Truth/Grevys_Experiment_5_test_mavric_imageomics/ia_classifier/ia_annots_filtered_35.json
+  - name: Grevys_Experiment_6
+    input_json: /fs/ess/PAS2136/ggr_data/results/IJCV_MAVRIC_Ground_Truth/Grevys_Experiment_6_test_mavric_imageomics/ia_classifier/ia_annots_filtered_35.json
+  - name: Plains_Experiment_7
+    input_json: /fs/ess/PAS2136/ggr_data/results/IJCV_MAVRIC_Ground_Truth/Plains_Experiment_7_test_mavric_imageomics/ia_classifier/ia_annots_filtered_35.json
+  - name: Plains_Experiment_8
+    input_json: /fs/ess/PAS2136/ggr_data/results/IJCV_MAVRIC_Ground_Truth/Plains_Experiment_8_test_mavric_imageomics/ia_classifier/ia_annots_filtered_35.json
+  - name: Plains_Experiment_9
+    input_json: /fs/ess/PAS2136/ggr_data/results/IJCV_MAVRIC_Ground_Truth/Plains_Experiment_9_test_mavric_imageomics/ia_classifier/ia_annots_filtered_35.json
+  - name: Plains_Experiment_10
+    input_json: /fs/ess/PAS2136/ggr_data/results/IJCV_MAVRIC_Ground_Truth/Plains_Experiment_10_test_mavric_imageomics/ia_classifier/ia_annots_filtered_35.json
+  - name: Plains_Experiment_11
+    input_json: /fs/ess/PAS2136/ggr_data/results/IJCV_MAVRIC_Ground_Truth/Plains_Experiment_11_test_mavric_imageomics/ia_classifier/ia_annots_filtered_35.json
+  - name: Giraffe_Experiment_12
+    input_json: /fs/ess/PAS2136/ggr_data/results/IJCV_MAVRIC_Ground_Truth/Giraffe_Experiment_12_test_mavric_imageomics/ia_classifier/ia_annots_filtered_35.json
+  - name: Giraffe_Experiment_13
+    input_json: /fs/ess/PAS2136/ggr_data/results/IJCV_MAVRIC_Ground_Truth/Giraffe_Experiment_13_test_mavric_imageomics/ia_classifier/ia_annots_filtered_35.json

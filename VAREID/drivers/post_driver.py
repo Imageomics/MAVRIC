@@ -19,7 +19,8 @@ def main(args):
         interaction_mode = "database"
 
     post_command = f'python -u -m VAREID.algo.postprocessing.postprocessing {config["image_dir"]} {config["post_left_in_path"]} {config["post_right_in_path"]} {config["post_left_out_path"]} {config["post_right_out_path"]} --db {config["post_db_path"]} --interaction_mode {interaction_mode}'
-    gui_command = f'python -u -m VAREID.algo.postprocessing.gui --db {config["post_db_path"]} --allowed_dir {config["data_dir_out"]}'
+    allowed_dir = config.get("post_allowed_dir", config["data_dir_out"])
+    gui_command = f'python -u -m VAREID.algo.postprocessing.gui --db {config["post_db_path"]} --allowed_dir {allowed_dir}'
 
     # MODE (UI)
     if interaction_mode == "database":
