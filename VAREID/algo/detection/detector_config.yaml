@@ -1,9 +1,3 @@
-# confidence_threshold: 0.75
-# video_fps: 8
-# video_max_frames: 5000
-# img_size_vid: 3008
-# img_size_img: 320
-
 # Detector Configuration
 
 # Detection parameters
@@ -11,13 +5,13 @@ confidence_threshold: 0.1
 save_threshold: 0.75
 
 # Video processing
-video_fps: 15              # UPDATED: 8 -> 15 fps for better tracking
+video_fps: 15
 video_max_frames: 5000
-img_size_vid: 3008         # Keep high resolution for aerial footage
+img_size_vid: 3008
 
 # Image processing (for non-video detections)
 img_size_img: 320
 
 # Tracker selection
 # Options: "bytetrack.yaml", "botsort.yaml", or path to custom config
-tracker: "bytetrack.yaml"    # Use custom ByteTrack settings from this directory
+tracker: "bytetrack.yaml"

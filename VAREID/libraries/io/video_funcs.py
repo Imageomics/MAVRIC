@@ -30,7 +30,6 @@ def process_video_by_frame(cap, file_name, img_dir, frame_rate=8, max_frames=200
     """
     Processes and split a video frame-by-frame while saving to a new location.
     """
-    # frame_dims = (int(cap.get(cv2.CAP_PROP_FRAME_WIDTH)),int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT)))
     max_num_length = len(str(max_frames))
 
     dot = file_name.rfind(".")
@@ -46,8 +45,6 @@ def process_video_by_frame(cap, file_name, img_dir, frame_rate=8, max_frames=200
     frame_interval = round(original_frame_rate / frame_rate)
     print(f"[pipeline] Frame interval for extraction: {frame_interval}")
 
-    # codec = cv2.VideoWriter_fourcc(*'MP4V')
-    # writer = cv2.VideoWriter(out_file,codec,frame_rate,frame_dims)
 
     extracted_frames = 0
     current_frame = 0
@@ -61,8 +58,6 @@ def process_video_by_frame(cap, file_name, img_dir, frame_rate=8, max_frames=200
             break
         
         if current_frame % frame_interval == 0:
-            # TODO: PROCESS FRAME FOR BIT DEPTH, ETC.
-            # writer.write(frame)
             extracted_frames += 1
 
             f_name = vid_name + "_" + str(extracted_frames).zfill(max_num_length) + ".jpg"
@@ -76,8 +71,6 @@ def process_video_by_frame(cap, file_name, img_dir, frame_rate=8, max_frames=200
         
         current_frame += 1
           
-    # Release writer but not capture as it may still be in use
-    # writer.release()
     print(f"[pipeline] Video {file_name} processed. Total frames extracted: {extracted_frames}")
     return params_list
 

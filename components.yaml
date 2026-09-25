@@ -4,7 +4,7 @@ status: AlphaRelease
 description: Video-only animal re-identification pipeline extracted from Imageomics/MAVRIC.
 owner: Ankit Kumar Upadhyay
 primaryThrust: useInspired/AE
-sourceCodeUrl: https://github.com/AnkitKUpadhyay/mavric-video-pipeline
+sourceCodeUrl: https://github.com/Imageomics/MAVRIC
 targetIcicleRelease: 2025-08
 componentVersion: v0.1.0
 licenseUrl:

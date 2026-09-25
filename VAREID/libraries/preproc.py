@@ -109,23 +109,6 @@ def get_lat_lon(exif_dict, default=(-1, -1)):
         lon = gps_to_decimal(lon_tup, lon_ref)
 
         return (lat, lon)
-        # lat_tup = exif_dict[const.EXIF_LAT]
-        # lat = float(lat_tup[0]) + float(lat_tup[1]) / 60 + float(lat_tup[2]) / 3600
-        # if (
-        #     const.EXIF_LAT_REF in exif_dict.keys()
-        #     and exif_dict[const.EXIF_LAT_REF] == "S"
-        # ):
-        #     lat = -lat
-
-        # lon_tup = exif_dict[const.EXIF_LON]
-        # lon = float(lon_tup[0]) + float(lon_tup[1]) / 60 + float(lon_tup[2]) / 3600
-        # if (
-        #     const.EXIF_LON_REF in exif_dict.keys()
-        #     and exif_dict[const.EXIF_LON_REF] == "W"
-        # ):
-        #     lon = -lon
-
-        # return (float(lat), float(lon))
 
     return default
 
